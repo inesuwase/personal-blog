@@ -1,0 +1,2 @@
+Hello {{user.username}}
+Welcome,u have signed up for the personal-blog app .Have fun of the app!
