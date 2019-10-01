@@ -1,0 +1,36 @@
+{% include 'navbar.html'%}
+
+{% import 'bootstrap/wtf.html' as wtf %}
+{% extends 'bootstrap/base.html' %}
+{% import 'macros.html' as macro %}
+
+{% block styles%}
+{{ super() }}
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="card">
+                <h4><a> Title:{{blog.title}}</a></h4>
+                <h5>{{blog.description}}.</h5>
+            
+        </div>
+
+        {{wtf.quick_form(form)}}
+
+        <hr>
+        <hr>
+        <div class="container " style="text-align: center;">
+            <div class="col-md-12 ">
+             <h4>Comments</h4>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
