@@ -1,0 +1,39 @@
+{% macro displayBlog(blog_List) %}
+<div class="row">
+    {% if blog_List %}
+    {% for blog in blog_List %}
+        <div class="text-center">
+            <p>Title:{{blog.title}}</p>
+
+                <h2>{{blog.description}}</h2>
+                <h3>{{blog.user.username}}</h3>
+                <h4>{{blog.comments.count()}}</h4>
+                <a href="{{url_for('main.new_comment',blog_id = blog.id)}}"></a>
+                <a href="{{url_for('main.update_blog',id = blog.id)}}"></a>
+                <a href="{{url_for('main.delete',id = blog.id)}}"></a>
+        </div>
+
+    </div>
+    {% endfor %}
+    {% else %}
+    {% endif %}
+</div>
+{% endmacro %}
+
+{% macro displayComment(comments) %}
+<ul>
+
+    {% if comments %}
+    {% for comment in comments %}
+            <h2>{{ comment.description }}</h2>
+        posted by {{comment.user.username}}
+        <a href="{{url_for('main.delete_comment',id = comment.id)}}"></a>
+    {% endfor %}
+    {% else %}
+
+    <h3>This post does not does not have any comments!</h3>
+    {%endif%}
+
+</ul>
+
+{% endmacro %}
