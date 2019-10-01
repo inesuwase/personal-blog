@@ -1,0 +1,34 @@
+
+{% import 'bootstrap/wtf.html' as wtf %}
+{% extends 'bootstrap/base.html' %}
+{% include 'navbar.html'%}
+{% block content %}
+{% block styles%}
+{{ super() }}
+{% endblock %}
+<div class="container">
+	<div class="row">
+
+		{{wtf.quick_form(form)}}
+		<ul style="list-style: none;">
+				<h3>Mypersonal-blogs</h3>
+			{% for blog in blogs %}
+			
+			<div class="list-group">
+
+				<div class="list-item" style="border-radius: 15px; cursive;font-size: 20px;">
+					
+					{{blog.id}}.
+
+					{{ blog.description }}
+				</div>
+
+			</div>
+			{% endfor %}
+		</ul>
+
+	</div>
+</div>
+
+
+{% endblock %}
