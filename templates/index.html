@@ -1,0 +1,20 @@
+{% extends 'bootstrap/base.html' %}
+{% import 'macros.html' as macro %}
+{% block navbar %}
+{% include 'navbar.html'%}
+{% endblock %}
+
+{% block styles%}
+{{ super() }}
+{% endblock %}
+{% block content %}
+
+
+<div class="container" style="background-image: url(https://previews.123rf.com/images/elosa/elosa1501/elosa150100094/35351038-purpel-label-with-white-ribbon-and-english-life-quote-time-for-me-with-three-white-marguerite-blosso.jpg); background-repeat: no-repeat; background-size: cover;">
+    <div class="row">
+        <div class="col-sm-3">
+            
+                <h1>Quotes</h1>
+                <p><i>{{ quotes.quote }}</i></p>
+                <p>~{{ quotes.author }}</p>
+{% endblock %
